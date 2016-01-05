@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	
+
 	"github.com/codegangsta/cli"
 	"github.com/redwhitelab/pitt/github"
 )
@@ -15,7 +15,7 @@ var (
 
 func main() {
 	pitt := Pitt{}
-	
+
 	app := cli.NewApp()
 	app.Name = "pitt"
 	app.Usage = "go project managment tool"
@@ -25,13 +25,13 @@ func main() {
 			Name:    "new",
 			Aliases: []string{"n"},
 			Usage:   "create new Go project",
-			Action: pitt.actionNew,
-		}, 
+			Action:  pitt.actionNew,
+		},
 		{
-			Name: "search",
+			Name:    "search",
 			Aliases: []string{"s"},
-			Usage: "search packages",
-			Action: pitt.actionSearch,
+			Usage:   "search packages",
+			Action:  pitt.actionSearch,
 		},
 	}
 	err := app.Run(os.Args)
@@ -44,11 +44,11 @@ func main() {
 type Pitt struct {
 }
 
-func (pitt *Pitt) actionNew (ctx *cli.Context) {
+func (pitt *Pitt) actionNew(ctx *cli.Context) {
 	println("new project: ", ctx.Args().First())
 }
 
-func (pitt *Pitt) actionSearch (ctx *cli.Context) {
+func (pitt *Pitt) actionSearch(ctx *cli.Context) {
 	query := ctx.Args().First()
 	println("search query: ", query)
 	result, err := github.Search(query)

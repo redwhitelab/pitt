@@ -1,6 +1,8 @@
 # pitt
 Go package manager
 
+[![Build Status](https://travis-ci.org/redwhitelab/pitt.svg)](https://travis-ci.org/redwhitelab/pitt.svg) [![Go Report Card](http://goreportcard.com/badge/redwhitelab/pitt)](http://goreportcard.com/report/redwhitelab/pitt)
+
 ## Install
 ```bash
 $ go get github.com/redwhitelab/pitt
